@@ -89,7 +89,7 @@
                 "description": "Bingung cari bandar togel terpercaya? RAJABANDOT jawabannya. Dari togel 4D sampai 5D, semua lengkap dengan link login gampang, prediksi jitu, dan result resmi yang selalu update real-time.",
                 "url": "https://www.mc-personnel.com/family-hubs-volunteers/",
                 "brand": {
-                    "@type": "Brand",
+                    "@type": "description",
                     "name": "RAJABANDOT"
                 },
                 "offers": {
